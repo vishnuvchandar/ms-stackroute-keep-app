@@ -1,0 +1,56 @@
+<!-- On submit, form should call the method to fetch login details and forward the details for authentication -->
+<h1>LOGIN TO TAKE NOTES</h1>
+<strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+<strong class="error-message">{{errMessage}}</strong>
+<strong class="error-message">{{successMessage}}</strong>
+<section class="login-card">
+    <div>
+        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+            <div>
+                <!--<label for="txtuser">User Name</label>-->
+                <input type="text" formControlName="username" id="txtuser" placeholder="Username" class="username">
+            </div>
+            <div>
+                <!--<label for="txtpassword">Password</label>-->
+                <input type="password" formControlName="password" id="txtpassword" placeholder="Password"
+                    class="password">
+            </div>
+
+            <button mat-raised-button type="Submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        <mat-expansion-panel class="mat-expansion-panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Sign Up
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="First Name" [(ngModel)]="user.firstName" name="firstName" type="text">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <textarea matInput placeholder="Last Name" [(ngModel)]="user.lastName" name="lastName"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <textarea matInput placeholder="username" [(ngModel)]="user.username" name="username"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <textarea matInput placeholder="password" [(ngModel)]="user.password" name="password"></textarea>
+                </mat-form-field>
+            </div>
+
+            <mat-action-row>
+                <button mat-button (click)="signUp()">Done</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+<!-- Label to display any error messages -->
+<label class="error-message">{{ errMessage }}</label>
+
+<!-- Expansion panel to add new notes -->
+
+<section class="add-category-card">
+  <mat-expansion-panel class="mat-expansion-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Category
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="category.categoryName" name="title" type="text">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <textarea matInput placeholder="Description" [(ngModel)]="category.categoryDescription" name="text"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-action-row>
+        <button mat-button (click)="addCategory()">Done</button>
+      </mat-action-row>
+    </div>
+
+    <mat-expansion-panel class="mat-expansion-panel">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Category List
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-form-field>
+          <mat-select name="categoryNames" placeholder="Select category Name" [(ngModel)]="categoryObj">
+            <mat-option *ngFor="let categoryObj of categories" [value]="categoryObj">
+              {{ categoryObj.categoryName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <div>
+          <mat-form-field>
+            <textarea matInput placeholder="Description" [(ngModel)]="categoryObj.categoryDescription" name="text"></textarea>
+          </mat-form-field>
+          </div>
+          <div>
+              <a title="Delete" class="trash-block"(click)="deleteCategory()"><i class="fas fa-trash-alt">Delete The Selected Category</i></a>
+          </div>
+        </div>
+    </mat-expansion-panel>
+  </mat-expansion-panel>
+
+
+</section>

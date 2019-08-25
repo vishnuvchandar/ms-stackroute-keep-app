@@ -1,0 +1,27 @@
+<mat-card class="card" [ngStyle]="setCardStyle()">
+    <strong>{{errMessage}}</strong>
+    <img class="note-bulb" src="assets/light-bulb.png" alt="bulb">
+    <img class="note-bulb-flash" src="assets/light-bulb-flash.png" alt="bulb">
+    <mat-card-header>
+        <mat-card-title class="card-title">{{note.title}}</mat-card-title>
+        <mat-card-subtitle *ngIf="isCategoryNotNull">
+            {{note.category.categoryName}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="card-text">
+            {{note.text}}
+        </p>
+    </mat-card-content>
+    <mat-card-footer>
+                <p *ngFor="let reminder of note.reminders; index as i">{{note.reminders[i].reminderName}}</p>
+    </mat-card-footer>
+    <div>
+            <a title="Edit" class="sticky-fr" (click)="editNote()"><i class="far fa-sticky-note"></i></a>
+            <a title="Edit" class="sticky-fs" (click)="editNote()"><i class="fas fa-sticky-note"></i></a>
+            <a title="Delete" class="trash-block"(click)="deleteNote()"><i class="fas fa-trash-alt"></i></a>
+            <a title="Delete" class="trash-light"(click)="deleteNote()"><i class="far fa-trash-alt"></i></a>
+            
+    </div>
+    
+</mat-card>

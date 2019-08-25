@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One|Sacramento');
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+.card {
+    padding: 2em;
+    margin-top: 20px;
+    width: 250px;
+    box-shadow: 0 8px 16px 0 gray;
+  }
+
+  .card-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1em;
+  }
+  
+  .card-text {
+    font-family: 'Sacramento', cursive;
+    font-size: 2em;
+  }
+  
+  .note-bulb {
+    display: block;
+    max-height: 2em;
+    margin-left: auto;
+  }
+  
+  .note-bulb-flash {
+    display: none;
+    max-height: 2em;
+    margin-left: auto;
+  }
+  
+  .card:hover{
+    box-shadow: 0 8px 16px 0 goldenrod;
+  }
+
+  .card:hover .note-bulb-flash {
+    display: block;
+    
+  }
+  
+  .card:hover .note-bulb {
+    display: none;
+  }
+
+  div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 180px;
+  }
+
+  a{
+    padding-left: 20px
+  }
+
+  .card:hover .sticky-fs{
+    cursor: pointer;
+    display: block;
+  }
+
+  .card:hover .sticky-fr{
+    cursor: pointer;
+    display: none;
+  }
+
+  .sticky-fs{
+    display: none;
+  }
+
+  .sticky-fr{
+    display: block;
+  }
+
+  .card:hover .trash-block{
+    cursor: pointer;
+    display: block;
+  }
+
+  .card:hover .trash-light{
+    cursor: pointer;
+    display: none;
+  }
+
+  .trash-block{
+    display: none;
+  }
+
+  .trash-light{
+    display: block;
+  }
+
+  mat-card-footer{
+    display: flex;
+    flex-direction: row;
+  }
+
+  mat-card-footer p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-left: 20px;
+  }

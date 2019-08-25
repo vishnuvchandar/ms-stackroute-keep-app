@@ -1,0 +1,32 @@
+<div>
+  <mat-chip-list>
+    <mat-chip *ngFor="let reminder of reminders; index as i" [value]="reminder">{{reminder.reminderName}}
+        <i class="far fa-hand-pointer"></i>
+    </mat-chip>
+  </mat-chip-list>
+</div>
+
+<mat-form-field class="matForm">
+  <mat-select name="remindernames" placeholder="Select reminder Name" [(ngModel)]="reminder">
+    <mat-option *ngFor="let reminder of reminders" [value]="reminder">
+      {{ reminder.reminderName }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-button (click)="deleteReminder()">Delete</button>
+
+
+<mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="reminder.reminderName" name="name" type="text">
+  </mat-form-field>
+
+
+  <mat-form-field>
+      <input matInput placeholder="Type" [(ngModel)]="reminder.reminderType" name="type">
+  </mat-form-field>
+
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="reminder.reminderDescription" name="description"></textarea>
+    </mat-form-field>
+

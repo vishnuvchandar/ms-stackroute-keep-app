@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+                <app-reminder-taker></app-reminder-taker>
+                <app-reminder-view></app-reminder-view>
+    </mat-sidenav>
+    <section class="container">
+        <div>
+            <!-- NoteTakerComponent to be displayed as part of DashboardComponent -->
+            <app-note-taker></app-note-taker>
+        </div>
+        <!-- For category Taker component-->
+        <div>
+            <app-category-taker></app-category-taker>
+        </div>
+    </section>
+    
+    <!-- Following router outlet displays the NoteViewComponent or ListViewComponent based on primary route -->
+    <router-outlet></router-outlet>
+    
+    <!-- Following named router outlet displays the EditViewComponent based on the secondary route -->
+    <router-outlet name="noteEditOutlet"></router-outlet>
+</mat-sidenav-container>

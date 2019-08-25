@@ -1,0 +1,44 @@
+<!-- Label to display any error messages -->
+<label class="error-message">{{ errMessage }}</label>
+
+<!-- Expansion panel to add new notes -->
+
+<section class="add-note-card">
+  <mat-expansion-panel class="mat-expansion-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Take a note
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Title" [(ngModel)]="note.title" name="title" type="text">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <textarea matInput placeholder="Note" [(ngModel)]="note.text" name="text"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select name="categoryNames" placeholder="Select category Name" [(ngModel)]="note.category">
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{ category.categoryName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-select placeholder="Select reminders" multiple [(ngModel)]="note.reminders">
+              <mat-option *ngFor="let reminder of reminders" [value]="reminder">{{reminder.reminderName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <mat-action-row>
+      <button mat-button (click)="addNote()">Done</button>
+      <button mat-button (click)="deleteAllNotes()">Delete All</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</section>

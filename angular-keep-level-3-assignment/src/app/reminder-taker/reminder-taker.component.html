@@ -1,0 +1,27 @@
+<section class="add-reminder-card">
+    <mat-expansion-panel class="mat-expansion-panel">
+        <mat-expansion-panel-header>
+          Reminder
+          </mat-expansion-panel-header>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="reminder.reminderName" name="title" type="text">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <textarea matInput placeholder="Type" [(ngModel)]="reminder.reminderType" name="text"></textarea>
+    </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field>
+        <textarea matInput placeholder="Description" [(ngModel)]="reminder.reminderDescription" name="text"></textarea>
+      </mat-form-field>
+    </div>
+  <div>
+    <mat-action-row>
+      <button mat-button (click)="addReminder()">Done</button>
+    </mat-action-row>
+  </div>
+  </mat-expansion-panel>
+</section>

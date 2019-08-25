@@ -1,0 +1,36 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.container {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+div{
+    padding-left: 140px;
+}
+
+.sidenav-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background:rgb(144, 206, 171);
+  }
+
+  .sidenav-header {
+    margin-top: auto;
+    background:rgb(62, 172, 110);
+  }
+
+  app-reminder-taker{
+    padding-left: 10px;
+    padding-top: 70px;
+    padding-right: 20px;
+  }

@@ -1,0 +1,105 @@
+# Dockerfile has been added in all micro-services, you need to dockerize all micro-services and add docker-compose.yml file
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=root
+    - MONGO_INITDB_ROOT_PASSWORD=root   
+    ports:
+    - "27017:27017"
+    command: mongod --bind_ip_all
+  
+  mysqldb:
+    image: mysql
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Keep
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+  
+  categoryservice:
+    build: ./CategoryService/
+    image: stackroute/categoryservice
+    environment:
+    - MONGO_HOST=mongo
+    - MONGO_USERNAME=root
+    - MONGO_PASSWORD=root
+    - MONGO_DATABASE=keep
+    - MONGO_AUTHDB=admin
+    - MONGO_PORT=27017
+    ports:
+    - "8083:8083"
+    links:
+    - mongodb
+    depends_on:
+    - mongodb
+    
+  noteservice:
+    build: ./NoteService/
+    image: stackroute/noteservice
+    environment:
+    - MONGO_HOST=mongo
+    - MONGO_USERNAME=root
+    - MONGO_PASSWORD=root
+    - MONGO_DATABASE=keep
+    - MONGO_AUTHDB=admin
+    - MONGO_PORT=27017
+    ports:
+    - "8082:8082"
+    links:
+    - mongodb
+    depends_on:
+    - mongodb
+  
+  reminderservice:
+    build: ./ReminderService/
+    image: stackroute/reminderservice
+    environment:
+    - MONGO_HOST=mongo
+    - MONGO_USERNAME=root
+    - MONGO_PASSWORD=root
+    - MONGO_DATABASE=keep
+    - MONGO_AUTHDB=admin
+    - MONGO_PORT=27017
+    ports:
+    - "8081:8081"
+    links:
+    - mongodb
+    depends_on:
+    - mongodb
+  
+  userservice:
+    build: ./UserService/
+    image: stackroute/userservice
+    environment:
+    - MONGO_HOST=mongo
+    - MONGO_USERNAME=root
+    - MONGO_PASSWORD=root
+    - MONGO_DATABASE=keep
+    - MONGO_AUTHDB=admin
+    - MONGO_PORT=27017
+    ports:
+    - "8080:8080"
+    links:
+    - mongodb
+    depends_on:
+    - mongodb
+
+  UserAuthService:
+    build: ./UserAuthentication-Service/
+    image: stackroute/userauthservice
+    environment:
+    - MYSQL_HOST=mysql-db
+    - MYSQL_DATABASE=Keep
+    - MYSQL_USER=root
+    - MYSQL_PASSWORD=root
+    ports:
+    - "8089:8089"
+    links:
+    - mysqldb
+    depends_on:
+    - mysqldb

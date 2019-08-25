@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.keep-c-toggle-view {
+	width: 100%;
+	margin-left: 90%;
+	cursor: pointer;
+}
+
+mat-toolbar {
+	display: flex;
+	padding: 2em;
+	font-family: 'Raleway', sans-serif;
+	border-bottom: 1px solid black;
+	background-color: lightgoldenrodyellow;
+	}
+	
+	.keep img{
+			max-height: 3em;
+	}
+
+	.keep {
+		padding-left: 20px;
+	}

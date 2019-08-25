@@ -1,0 +1,21 @@
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+div{
+    margin-top: 2em;
+}
+
+mat-chip {
+    background-color: rgb(27, 133, 69) !important;
+}
+
+i{
+    padding-left: 3px;
+}
+
+mat-chip-list {
+    display: flex;
+    flex-direction: row;
+}
+
+mat-form-field{
+    padding-left: 20px;
+}

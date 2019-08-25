@@ -1,0 +1,13 @@
+add-reminder-card{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-expansion-panel{
+    background: none;
+}
+
+mat-expansion-panel-header{
+    background:rgb(62, 172, 110);
+}

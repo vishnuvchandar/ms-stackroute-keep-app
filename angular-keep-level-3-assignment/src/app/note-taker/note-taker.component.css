@@ -1,0 +1,21 @@
+.error-message {
+    padding-top: 2em;
+    padding-left: 4em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: red;
+  }
+  
+  .mat-expansion-panel {
+    margin: auto;
+  }
+  
+  .add-note-card {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  mat-form-field {
+    width: 300px !important;
+  }

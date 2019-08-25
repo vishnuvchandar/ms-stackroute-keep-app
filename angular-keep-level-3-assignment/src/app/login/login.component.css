@@ -1,0 +1,58 @@
+h1 {
+    text-align: center;
+    font-family: "Century Gothic", "Helvetica", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: lightgoldenrodyellow;
+    background-color: lightblue;
+    text-shadow: 0px 2px 0px rgba(255,255,255,.5); 
+    margin-top: 0;
+}
+
+label{
+    margin:5px 0;
+    display:block;
+}
+input{
+    height: 50px;
+    width: 100%;
+    border-style: none;
+    border-color: gray;
+    margin-bottom: 2px;
+}
+input::placeholder{
+    text-align: left;
+}
+button {
+    display:flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-style: ridge;
+}
+
+button:hover {
+    color: aliceblue;
+    background-color: grey
+}
+.error-message {
+    padding-top: 2em;
+    padding-left: 4em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: red;
+  }
+  
+  .mat-expansion-panel {
+    margin: auto;
+  }
+  
+  .login-card {
+    display:flex;
+    flex-direction: column;
+    margin-top:50px;
+    padding:5px;
+    width:30vw;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 8px 16px 0 gray
+  }

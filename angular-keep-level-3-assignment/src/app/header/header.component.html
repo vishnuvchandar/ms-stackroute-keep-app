@@ -1,0 +1,9 @@
+<mat-toolbar>Keep
+	<div class="keep-c-toggle-view" (click)="clicked()">
+		<i *ngIf="isNoteView" class="material-icons switchToListView">view_list</i>
+		<i *ngIf="!isNoteView" class="material-icons switchToNoteView">view_quilt</i>
+	</div>
+	<div class="keep">
+		<img src="assets/keep.png" alt="keep">
+	</div>
+</mat-toolbar>
